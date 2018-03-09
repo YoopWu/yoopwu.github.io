@@ -24,7 +24,7 @@
 <meta property="og:image" content="http://yoopwu.github.io/img/pawserver_download_page.png">
 <meta property="og:image" content="http://yoopwu.github.io/img/paw_server_first_run.png">
 <meta property="og:image" content="http://yoopwu.github.io/img/paw_main_null_page.png">
-<meta property="og:updated_time" content="2018-03-09T13:42:32.132Z">
+<meta property="og:updated_time" content="2018-03-09T14:03:54.885Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于PawServer搭建Android上的PHP环境">
 <meta name="twitter:description" content="在Android手机上搭建本地服务器的方式有很多种，而且相对而言都比较简单。个人觉得比较好用，而且上手难度表较低的还是AndroidAsync，当然还有利用NanoHTTPD来搭建自己的本地服务器的,总体来说都是不错的选择。好了，言归正传！但由于项目上的需求，需要在本地服务器中运行php代码，实现一系列的接口调用等功能，所以就不得不另寻他法，最后发现了PawServer这个神奇的东西。具体怎么来搭">
@@ -178,6 +178,30 @@
       </header>
     
 	<!-- 目录内容 -->
+        
+            <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+            </p>
+            <div id="toc-article" class="toc-article">
+                <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+                <strong class="toc-title">文章目录</strong>
+                <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#下载官方PAW-Server-for-Android"><span class="toc-number">1.</span> <span class="toc-text">下载官方PAW Server for Android</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装php插件"><span class="toc-number">2.</span> <span class="toc-text">安装php插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下载资源"><span class="toc-number">3.</span> <span class="toc-text">下载资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装php插件-1"><span class="toc-number">4.</span> <span class="toc-text">安装php插件</span></a></li></ol>
+           </div>
+           <script type="text/javascript">
+            function showToc(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:block");
+                show_toc_btn.setAttribute("style","display:none");
+                };
+            function showBtn(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:none");
+                show_toc_btn.setAttribute("style","display:block");
+                };
+           </script>
              
         <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
@@ -206,7 +230,8 @@
 <h3 id="下载资源"><a href="#下载资源" class="headerlink" title="下载资源"></a>下载资源</h3><p>同样的，打开PawServer<a href="http://paw-android.fun2code.de/" target="_blank" rel="noopener">官网</a>，把页面滚动到最下面，我们会看到有我们所需要的东西，那么我们可以根据自己的需求来下载对应的资源文件，因为我是用Android Studio来进行开发的，所以我选择的是下载Android Studio Project对应的文件，也就是BuildOwnPawServer_AndroidStudio.zip。如图所示：<br><img src="/img/pawserver_download_page.png" alt="PawServer资源下载"><br>下载完成后得到的project其实就是一个利用PawServer来搭建自己的本地服务器的demo。接下来，就可以运行这个demo了。</p>
 <h3 id="安装php插件-1"><a href="#安装php插件-1" class="headerlink" title="安装php插件"></a>安装php插件</h3><p>运行项目，把软件安装到手机上面，根据页面上的提示信息，在浏览器中打开对应的网址，比如我的手机显示的就是<code>192.168.1.109:7575</code>。为了方便调试，我修改了<code>INSTALL_DIR = Environment.getExternalStorageDirectory().getPath() + &quot;/www&quot;;</code> 当你看到如下所示页面时，就代表PawServer以及成功运行了。<br><img src="/img/paw_server_first_run.png" alt=""></p>
 <p>在项目中的asset文件中中，我们会发现一个content.zip文件，我们复制出来，并解压，后面会需要用到。同样的，打开文件管理器，找到paw文件夹，这个文件夹就是之前demo运行时所生成的文件，然后点击进入html文件夹，对比我们前面解压出来的content文件夹中的html文件夹，不难发现会多出来一个app的文件夹，而且里面有很多的东西，当然也包括了plugins文件夹，简单一点处理，就是把app文件夹一并拷贝的content/html/文件夹中，然后再重新打包成content.zip文件，并拷贝到项目中，替换原来的content.zip。</p>
-<h5 id="值得注意一点的是-细心的您应该会发现demo运行时的端口是8080，而下载的project运行时的demo的端口是7575，那么，我们要怎么修改端口号呢？很简单，在解压出来的content文件夹中，找到文件-conf-server-xml，修改server-xml中的端口值就好了。"><a href="#值得注意一点的是-细心的您应该会发现demo运行时的端口是8080，而下载的project运行时的demo的端口是7575，那么，我们要怎么修改端口号呢？很简单，在解压出来的content文件夹中，找到文件-conf-server-xml，修改server-xml中的端口值就好了。" class="headerlink" title="值得注意一点的是:细心的您应该会发现demo运行时的端口是8080，而下载的project运行时的demo的端口是7575，那么，我们要怎么修改端口号呢？很简单，在解压出来的content文件夹中，找到文件/conf/server.xml，修改server.xml中的端口值就好了。"></a>值得注意一点的是:细心的您应该会发现demo运行时的端口是8080，而下载的project运行时的demo的端口是7575，那么，我们要怎么修改端口号呢？很简单，在解压出来的content文件夹中，找到文件/conf/server.xml，修改server.xml中的端口值就好了。</h5><p>接下来，咱们需要做的步骤就是在文件管理器中找到www文件夹并删除，然后再运行project。再次进入文件管理器中找到www文件夹，我们会发现我们需要的php_plugin是存在的，我们要怎么处理才能完成对php_plugin的安装呢？</p>
+<p><b>值得注意一点的是:细心的您应该会发现demo运行时的端口是8080，而下载的project运行时的demo的端口是7575，那么，我们要怎么修改端口号呢？很简单，在解压出来的content文件夹中，找到文件/conf/server.xml，修改server.xml中的端口值就好了。</b></p>
+<p>接下来，咱们需要做的步骤就是在文件管理器中找到www文件夹并删除，然后再运行project。再次进入文件管理器中找到www文件夹，我们会发现我们需要的php_plugin是存在的，我们要怎么处理才能完成对php_plugin的安装呢？</p>
 <p>重新打开网址<code>192.168.1.109:8080/app</code>（修改了端口号），我们会看到这样一个和之前一样的登录页面，但是很多东西都显示不出来，具体原因是什么，我倒是也没有去研究过，如果有谁知道，请告诉我，谢谢啦！但是并不影响使用，同样的输入admin/paw的账号，同样会进入到主页，那么，很不幸的，还是没有东西，会看到一大堆的null，就像这样的:</p>
 <p><img src="/img/paw_main_null_page.png" alt=""></p>
 <p>其实，我内心也是拒绝的，没办法，工作还得继续!=_=!，当然，我想表达的意思是，我们能不能不通过打开网页的方式，点击’install’来完成php_plugin的安装呢？这样好麻烦的对吧，而且，在实际情况的运用中，咱不可能再要用户去打开一个网页，然后再点击’install’按钮什么的，这样的处理方式太不人性化，而且，到时候，谁还会用你的软件呢。。。。。</p>
@@ -511,6 +536,19 @@ if(install != null &amp;&amp; install.equals(&quot;true&quot;)) {
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#下载官方PAW-Server-for-Android"><span class="toc-number">1.</span> <span class="toc-text">下载官方PAW Server for Android</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装php插件"><span class="toc-number">2.</span> <span class="toc-text">安装php插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#下载资源"><span class="toc-number">3.</span> <span class="toc-text">下载资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装php插件-1"><span class="toc-number">4.</span> <span class="toc-text">安装php插件</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
@@ -609,14 +647,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">斐波拉西</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Java算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">序言</a>
               </li>
              
@@ -634,6 +664,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">本地服务器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">斐波拉西</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java算法</a>
               </li>
             
             <div class="clearfix"></div>
