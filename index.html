@@ -84,6 +84,9 @@
 		        
 			</div>
 		</nav>
+		<nav class="header-music">
+	      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height=86 src="//music.163.com/outchain/player?type=2&id=443292501&auto=1&height=66"></iframe>
+	    </nav>
 	</header>		
 </div>
 
@@ -146,6 +149,100 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-搭建Android上的PHP环境" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/09/搭建Android上的PHP环境/">基于PawServer搭建Android上的PHP环境</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/09/搭建Android上的PHP环境/" class="archive-article-date">
+  	<time datetime="2018-03-09T04:56:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-09</time>
+</a>
+        
+      </header>
+    
+	<!-- 目录内容 -->
+             
+        <!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在Android手机上搭建本地服务器的方式有很多种，而且相对而言都比较简单。个人觉得比较好用，而且上手难度表较低的还是<a href="https://github.com/koush/AndroidAsync" target="_blank" rel="noopener">AndroidAsync</a>，当然还有利用<a href="https://github.com/NanoHttpd/nanohttpd" target="_blank" rel="noopener">NanoHTTPD</a>来搭建自己的本地服务器的,总体来说都是不错的选择。好了，言归正传！但由于项目上的需求，需要在本地服务器中运行php代码，实现一系列的接口调用等功能，所以就不得不另寻他法，最后发现了PawServer这个神奇的东西。具体怎么来搭建我们的本地服务器呢，下面开始一步一步的介绍。</p>
+<h3 id="下载官方PAW-Server-for-Android"><a href="#下载官方PAW-Server-for-Android" class="headerlink" title="下载官方PAW Server for Android"></a>下载官方PAW Server for Android</h3><p>进入PawServer<a href="http://paw-android.fun2code.de/" target="_blank" rel="noopener">官网</a>，下载PAW Server for Android软件，并安装到手机上。这个app是需要在Google Play上面下载的，为了方便下载，可自己百度如何在Google play上面下载app，这里提供一个可以下载的网址，点<a href="https://apps.evozi.com/apk-downloader/" target="_blank" rel="noopener">这里</a>。具体怎么使用，我相信聪明的你一定会懂的！下载之后，安装到手机上，点击运行，根据页面的提示，打开对应的网址，即可看到如下页面信息:</p>
+<p><img src="/img/paw_demo_login.png" alt=""></p>
+<p>在登录窗口中输入用户名:admin，密码:paw 然后进入主页，您看到的页面应该是这样的:</p>
+        
+          <a class="article-more-a" href="/2018/03/09/搭建Android上的PHP环境/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">PawServer</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">本地服务器</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/09/搭建Android上的PHP环境/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-斐波拉西算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -397,15 +494,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">序言</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">斐波拉西</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Java算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">序言</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">PawServer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">PHP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">本地服务器</a>
               </li>
             
             <div class="clearfix"></div>
